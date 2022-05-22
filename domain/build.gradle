@@ -1,9 +1,14 @@
 plugins {
-    id 'java-library'
-    id 'org.jetbrains.kotlin.jvm'
+    id "org.jetbrains.kotlin.jvm"
+    id "org.jetbrains.kotlin.kapt"
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+dependencies {
+    implementation "javax.inject:javax.inject:$javaxInjectVersion"
+    implementation("dev.forkhandles:result4k:2.$result4kVersion")
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$androidCoroutineVersion"
+//    implementation("org.mapstruct:mapstruct:$mapStructVersion")
+//    kapt("org.mapstruct:mapstruct-processor:$mapStructVersion")
 }
+

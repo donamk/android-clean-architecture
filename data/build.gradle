@@ -1,7 +1,17 @@
 plugins {
     id "org.jetbrains.kotlin.jvm"
+    id "org.jetbrains.kotlin.kapt"
 }
 
 dependencies {
     implementation project(":domain")
+
+    def javaxInjectVersion = "1"
+    def result4kVersion = "1.1.0"
+    def mapStructVersion = "1.5.0.RC1"
+
+    implementation "javax.inject:javax.inject:$javaxInjectVersion"
+    implementation("dev.forkhandles:result4k:2.$result4kVersion")
+    implementation("org.mapstruct:mapstruct:$mapStructVersion")
+    kapt("org.mapstruct:mapstruct-processor:$mapStructVersion")
 }
